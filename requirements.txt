@@ -6,3 +6,4 @@ django-extensions
 werkzeug
 django-cors-headers
 git+https://github.com/omab/python-social-auth.git
+uwsgi
