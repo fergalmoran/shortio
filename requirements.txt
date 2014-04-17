@@ -1,0 +1,8 @@
+elementtree
+django==1.6
+south
+djangorestframework
+django-extensions
+werkzeug
+django-cors-headers
+git+https://github.com/omab/python-social-auth.git

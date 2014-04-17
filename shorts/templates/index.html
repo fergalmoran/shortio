@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="{% url 'urls:create' %}" method="post">
+        {% csrf_token %}
+        <label for="url">Url: </label>
+        <input type="text" id="url" name="url" value="">
+        <input type="submit"/>
+    </form>
+
+    {% if error_message %}
+        <h5>{{ error_message }}</h5>
+    {% endif %}
+
+    {% if latest_url_list %}
+        <ul>
+            {% for url in latest_url_list %}
+                <li><a href="{% url 'urls:detail' url.id %}">{{ url.url }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}
