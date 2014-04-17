@@ -8,3 +8,4 @@ django-cors-headers
 git+https://github.com/omab/python-social-auth.git
 uwsgi
 gunicorn
+django-compressor

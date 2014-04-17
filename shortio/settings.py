@@ -17,12 +17,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '(7e**gq4n^8vd*w543q+!$p8f)*-q4i6(jpl=6*7o0&a-jq=dv'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
 TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -39,6 +33,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'south',
     'corsheaders',
+    'compressor',
     'django_extensions',
     'rest_framework',
     'dispatcher',
@@ -91,6 +86,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
+)
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
 )
 
 TEMPLATE_DIRS = (
