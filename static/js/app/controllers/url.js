@@ -20,4 +20,5 @@ angular.module('shortioApp')
                 $scope.error = "Not a valid url";
             }
         };
+        $('#url').focus();
     });
