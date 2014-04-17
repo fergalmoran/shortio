@@ -101,4 +101,4 @@ CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = (
     '^http?://(\w+\.)?bitchmints.com$',
 )
-SIO_BASE_URL = 'http://localhost:8000/'
+from shortio.localsettings import *
